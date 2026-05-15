@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+
+<body>
+    <h1>Formulário</h1>
+
+    <form>
+        <label for="pnome">Primeiro Nome:</label>
+        <input type="text" name="pnome" id="pnome" placeholder="Digite seu primeiro nome...">
+        <br><br>
+
+        <!-- Tipo Raio -->
+        <label>
+            <b>Qual seu nível de programador</b>
+        </label><br>
+
+        <label>
+            <input type="radio" name="nivel" value="Iniciante" checked>Iniciante
+            <input type="radio" name="nivel" value="Iniciante">Médio
+            <input type="radio" name="nivel" value="Iniciante">Avançado
+        </label>
+        <br><br>
+
+        <!-- Tipo para selecionar itens -->
+        <label for="escolaridade"><b>Sua escolaridade</b></label>
+        <select id="escolaridade" required>
+            <option selected disabled value="">Selecione</option>
+            <option>Educação Básica</option>
+            <option>Educação Média</option>
+            <option>Educação Superior</option>
+            <option>Pós Graduaçãoo</option>
+            <option>Outros</option>
+        </select>
+        <br><br>
+
+        <!-- Tipo Checkbox -->
+        <label><b>Selecione as tecnologias que você conhece:</b></label><br>
+
+        <input type="checkbox" name="tecnologia1" id="tecnologia1" value="HTML">
+        <label for="tecnologia1">HTML</label>
+
+        <input type="checkbox" name="tecnologia2" id="tecnologia2" value="css">
+        <label for="tecnologia2">CSS</label>
+
+        <input type="checkbox" name="tecnologia3" id="tecnologia3" value="javascript">
+        <label for="tecnologia3">JavaScript</label>
+        <br><br>
+    </form>
+
+    <!-- Formulário de upload de arquivo-->
+    <form action="/upload-arquivo" method="post" enctype="multipart/form-data">
+        <label for="arquivo">Escolha um arquivo:</label>
+        <input type="file" name="arquivo" id="arquivo" required>
+    </form> <br><br>
+
+    <!-- Formulário com Data -->
+    <label for="nascimento">Data Nascimento</label>
+    <input type="date" name="nascimento" id="nascimento"> <br><br>
+
+    <!-- Botão de envio -->
+    <input type="submit" value="Enviar"> <br><br>
+
+    <!-- Formulário de agendamento -->
+    <form action="Processar formulário" method="post">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <label for="nome">nome</label>
+            <input type="text" name="nome" id="nome">
+
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email">
+        </fieldset><br><br>
+    </form>
+
+    <!-- Limitação de caracteres -->
+    <form action="Processar formulário" method="post">
+        <label for="mensagem">Mensagem (Limite de 100 Caracteres)</label> 
+        <br>
+        <textarea name="mensagem" id="mensagem" rows="4" cols="50" maxlength="100"></textarea> <!-- cols: tamanho da área--> 
+    </form> <br><br>
+
+    <!-- Formulário para somar números -->
+    <form oninput="resultado.value=parseInt(a.value) + parseInt(b.value) || 0">
+        <h2>Somando dois Números</h2>
+
+        <label for="a">Número 1:</label>
+        <input type="number" name="a" id="a" placeholder="Digite um número...">
+        
+        <span> + </span>
+
+        <label for="b">Número 2:</label>
+        <input type="number" name="b" id="b" placeholder="Digite outro número">
+
+        <span> = </span>
+        
+        <output name="resultado">0</output> <br> <br>
+    </form>
+
+    <!-- Formulário de Seleção -->
+    <form>
+        <h2>Escolha uma Linguagem</h2>
+        <label for="linguagens"> Selecione uma opção:</label>
+        <select name="linguagens" id="linguagens">
+            <optgroup label="Linguagens Web">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="xml">XML</option>
+            </optgroup>
+            <optgroup>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+            </optgroup>
+        </select>
+    </form> <br><br>
+    
+    <!-- DataList - Menos udado-->
+     <h1>Escolha uma cidade e veja detalhes</h1>
+     <input List="cidades" name="cidade">
+     <datalist id="cidades">
+        <option value="São Paulo"></option>
+        <option value="Rio de Janeiro"></option>
+     </datalist>
+
+     <details>
+                <summary>Sobre São Paulo</summary>
+                <p>São Paulo é um dos estados mais desenvolvidos do Brasil, com a maior cidade do país. Possui uma
+                    economia forte e grande diversidade cultural.</p>
+            </details>
+ 
+            <details>
+                <summary>Sobre o Rio de Janeiro</summary>
+                <p>O estado do Rio de Janeiro é famoso por suas praias, carnaval e o Cristo Redentor. Sua capital é um
+                    dos destinos turísticos mais procurados do mundo.</p>
+            </details>
+ 
+            <details>
+                <summary>Sobre Minas Gerais</summary>
+                <p>Minas Gerais é conhecido por sua gastronomia, cidades históricas e belezas naturais, como a Serra do
+                    Cipó e a Serra da Canastra.</p>
+            </details>
+            </select>
+</body>
+
+</html>
